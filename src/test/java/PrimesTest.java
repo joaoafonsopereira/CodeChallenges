@@ -1,56 +1,54 @@
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
+import org.junit.jupiter.api.Test;
+import primes.Primes;
 
-import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class PrimesTest {
 
-    @org.junit.jupiter.api.Test
-    void isMultiple() {
+    @Test
+    void testIsMultiple() {
         assert (Primes.isMultiple(69, 3));
     }
 
-    @org.junit.jupiter.api.Test
-    void isPrime() {
-        assert Primes.isPrime(1609);
-        assert Primes.isPrime(4799);
-        assert Primes.isPrime(6637);
-        assert Primes.isPrime(7829);
-
-        assert !Primes.isPrime(7829 + 1);
-
-
-        // TODO: test with all primes in the wikipedia list
-        try {
-            Document doc = Jsoup.connect("https://en.wikipedia.org/wiki/List_of_prime_numbers")
-                    .get();
-
-
-        } catch (Exception e) {
-
+    @Test
+    void testIsPrimeNoPrevPrimes() {
+        List<Integer> primesList = Util.getPrimesList();
+        for(Integer p : primesList) {
+            assert Primes.isPrime(p);
+            if(p != 2)
+                assertFalse(Primes.isPrime(p+1), "" + (p+1));
         }
     }
 
-    @org.junit.jupiter.api.Test
-    void downloadPrimesList() {
-        List<Integer> plist = Util.getPrimesList();
-        System.out.println(plist);
-        System.out.println();
+    @Test
+    void testIsPrimeWithPrevPrimes() {
+        List<Integer> primesList = Util.getPrimesList();
+        List<Integer> prevPrimesList = new ArrayList<>();
+        for(Integer p : primesList) {
+            assert Primes.isPrime(p, prevPrimesList);
+            if(p != 2)
+                assertFalse(Primes.isPrime(p+1, prevPrimesList), "" + (p+1));
+            prevPrimesList.add(p);
+        }
     }
 
-    @org.junit.jupiter.api.Test
-    void testIsPrime() {
+    @Test
+    void testPrimesIterator() {
+        List<Integer> primesList = Util.getPrimesList();
+        Iterator<Integer> primesIt = Primes.newPrimesIterator();
+
+        for(Integer p : primesList) {
+            int p2 = primesIt.next();
+            assert p == p2;
+        }
     }
 
-    @org.junit.jupiter.api.Test
-    void nextPrime() {
-    }
+
+
+
+
 }
