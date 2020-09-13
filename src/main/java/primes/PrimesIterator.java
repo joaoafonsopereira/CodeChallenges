@@ -15,7 +15,7 @@ public class PrimesIterator implements Iterator<Integer> {
     int current;
     List<Integer> prevPrimes;
 
-    PrimesIterator() {
+    public PrimesIterator() {
         this.current = 1;
         this.prevPrimes = new ArrayList<>();
     }

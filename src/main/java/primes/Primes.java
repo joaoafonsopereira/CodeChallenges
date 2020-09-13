@@ -9,6 +9,11 @@ public class Primes {
         return (x % y) == 0;
     }
 
+    // TODO: make isMultiple a generic method
+    public static boolean isMultiple(long x, long y) {
+        return (x % y) == 0;
+    }
+
     public static boolean isPrime(int n) {
         return isPrime(n, 5);
     }
