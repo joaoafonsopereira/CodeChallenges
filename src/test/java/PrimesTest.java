@@ -16,8 +16,8 @@ class PrimesTest {
 
     @Test
     void testIsPrimeNoPrevPrimes() {
-        List<Integer> primesList = Util.getPrimesList();
-        for(Integer p : primesList) {
+        List<Long> primesList = Util.getPrimesList();
+        for(Long p : primesList) {
             assert Primes.isPrime(p);
             if(p != 2)
                 assertFalse(Primes.isPrime(p+1), "" + (p+1));
@@ -26,9 +26,9 @@ class PrimesTest {
 
     @Test
     void testIsPrimeWithPrevPrimes() {
-        List<Integer> primesList = Util.getPrimesList();
-        List<Integer> prevPrimesList = new ArrayList<>();
-        for(Integer p : primesList) {
+        List<Long> primesList = Util.getPrimesList();
+        List<Long> prevPrimesList = new ArrayList<>();
+        for(Long p : primesList) {
             assert Primes.isPrime(p, prevPrimesList);
             if(p != 2)
                 assertFalse(Primes.isPrime(p+1, prevPrimesList), "" + (p+1));
@@ -38,11 +38,11 @@ class PrimesTest {
 
     @Test
     void testPrimesIterator() {
-        List<Integer> primesList = Util.getPrimesList();
-        Iterator<Integer> primesIt = Primes.newPrimesIterator();
+        List<Long> primesList = Util.getPrimesList();
+        Iterator<Long> primesIt = Primes.newPrimesIterator();
 
-        for(Integer p : primesList) {
-            int p2 = primesIt.next();
+        for(Long p : primesList) {
+            long p2 = primesIt.next();
             assert p == p2;
         }
     }

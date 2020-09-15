@@ -10,7 +10,7 @@ public class Prob3 {
 //        long N = 600851475143L;
         long N = 317584931803L;
         PrimesIterator pIt = new PrimesIterator();
-        int nextPrime = pIt.next();
+        long nextPrime = pIt.next();
 
         while (N != 1) {
             while (!isMultiple(N, nextPrime))

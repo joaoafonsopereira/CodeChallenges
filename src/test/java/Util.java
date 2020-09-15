@@ -19,13 +19,13 @@ public class Util {
         Elements rows = table.select("tr");
 
         int numEntries = (rows.size() - 1) * rows.get(1).select("td").size();
-        List<Integer> primes = new ArrayList<>(numEntries);
+        List<Long> primes = new ArrayList<>(numEntries);
 
         for (int i = 1; i < rows.size(); i++) { //first row is the col names so skip it
             Element row = rows.get(i);
             Elements cols = row.select("td");
             for (Element col : cols)
-                primes.add(Integer.parseInt(col.text()));
+                primes.add(Long.parseLong(col.text()));
         }
 
         FileOutputStream fos = new FileOutputStream(PRIME_LIST_FILE);
@@ -35,8 +35,9 @@ public class Util {
         fos.close();
     }
 
-    public static List<Integer> getPrimesList() {
-        List<Integer> primes = new ArrayList<>();
+    @SuppressWarnings("unchecked")
+    public static List<Long> getPrimesList() {
+        List<Long> primes = new ArrayList<>();
         try {
             File plist = new File(PRIME_LIST_FILE);
             if(!plist.isFile())
@@ -45,7 +46,7 @@ public class Util {
             FileInputStream fis = new FileInputStream(plist);
             ObjectInputStream ois = new ObjectInputStream(fis);
 
-            primes = (ArrayList<Integer>) ois.readObject();
+            primes = (ArrayList<Long>) ois.readObject();
             ois.close();
             fis.close();
         }
