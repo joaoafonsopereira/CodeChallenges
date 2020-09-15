@@ -33,11 +33,10 @@ public class Primes {
 
     public static long getNthPrime(long n) {
         Iterator<Long> pIt = newPrimesIterator();
-        for(int i = 0; i < (n-1); i++) // stop at (n-1)th
+        for (int i = 0; i < (n - 1); i++) // stop at (n-1)th
             pIt.next();
         return pIt.next();
     }
-
 
 
     // https://en.wikipedia.org/wiki/Primality_test#Pseudocode

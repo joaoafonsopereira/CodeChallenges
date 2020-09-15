@@ -17,10 +17,10 @@ class PrimesTest {
     @Test
     void testIsPrimeNoPrevPrimes() {
         List<Long> primesList = Util.getPrimesList();
-        for(Long p : primesList) {
+        for (Long p : primesList) {
             assert Primes.isPrime(p);
-            if(p != 2)
-                assertFalse(Primes.isPrime(p+1), "" + (p+1));
+            if (p != 2)
+                assertFalse(Primes.isPrime(p + 1), "" + (p + 1));
         }
     }
 
@@ -28,10 +28,10 @@ class PrimesTest {
     void testIsPrimeWithPrevPrimes() {
         List<Long> primesList = Util.getPrimesList();
         List<Long> prevPrimesList = new ArrayList<>();
-        for(Long p : primesList) {
+        for (Long p : primesList) {
             assert Primes.isPrime(p, prevPrimesList);
-            if(p != 2)
-                assertFalse(Primes.isPrime(p+1, prevPrimesList), "" + (p+1));
+            if (p != 2)
+                assertFalse(Primes.isPrime(p + 1, prevPrimesList), "" + (p + 1));
             prevPrimesList.add(p);
         }
     }
@@ -41,14 +41,11 @@ class PrimesTest {
         List<Long> primesList = Util.getPrimesList();
         Iterator<Long> primesIt = Primes.newPrimesIterator();
 
-        for(Long p : primesList) {
+        for (Long p : primesList) {
             long p2 = primesIt.next();
             assert p == p2;
         }
     }
-
-
-
 
 
 }
