@@ -1,6 +1,6 @@
-import primes.PrimesIterator;
+import util.primes.PrimesIterator;
 
-import static primes.Primes.*;
+import static util.primes.Primes.*;
 
 public class Prob3 {
 

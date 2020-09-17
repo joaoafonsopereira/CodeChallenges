@@ -1,4 +1,4 @@
-package primes;
+package util.primes;
 
 import java.util.ArrayList;
 import java.util.Iterator;

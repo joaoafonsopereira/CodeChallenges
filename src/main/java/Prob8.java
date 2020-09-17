@@ -1,6 +1,7 @@
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import util.Util;
 
 public class Prob8 {
 
@@ -9,11 +10,7 @@ public class Prob8 {
         Document doc = Jsoup.connect(url).get();
         Element spaceSeparatedDigitLines = doc.getElementsByClass("monospace center").get(0);
         String digitsStr = spaceSeparatedDigitLines.text().replace(" ", "");
-        int digits[] = new int[digitsStr.length()];
-        for (int i = 0; i < digitsStr.length(); i++) {
-            digits[i] = digitsStr.charAt(i) - '0';
-        }
-        return digits;
+        return Util.toIntArray(digitsStr);
     }
 
     static long getProdBetween(int[] digits, int start, int end) {

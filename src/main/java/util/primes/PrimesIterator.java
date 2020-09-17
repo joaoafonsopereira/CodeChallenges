@@ -1,10 +1,10 @@
-package primes;
+package util.primes;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import static primes.Primes.isPrime;
+import static util.primes.Primes.isPrime;
 
 /**
  * Prime numbers generator. Saves all the previous primes in order to speed up

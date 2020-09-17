@@ -1,4 +1,4 @@
-import static primes.Primes.isMultiple;
+import static util.primes.Primes.isMultiple;
 
 public class Prob5 {
 
