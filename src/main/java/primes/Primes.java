@@ -1,5 +1,6 @@
 package primes;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -37,6 +38,37 @@ public class Primes {
             pIt.next();
         return pIt.next();
     }
+
+    /**
+     * Generate all the primes up to {@code limit}.
+     * Adapted from https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#Algorithm_and_variants
+     */
+    public static List<Integer> sieveOfEratosthenes(int limit) {
+        final int sqrt = (int) Math.sqrt(limit);
+        boolean[] isPrime = new boolean[limit + 1];
+        List<Integer> res = new ArrayList<>(limit);
+
+        for (int i = 2; i <= limit; i++)
+            isPrime[i] = true;
+
+        for (int i = 2; i <= limit; i++) {
+            if (isPrime[i]) {
+                if (i <= sqrt) { // this check is here because I merged the last 2 loops
+                    for (int j = i * i; j <= limit; j += i)
+                        isPrime[j] = false;
+                }
+                res.add(i);
+            }
+        }
+        return res;
+    }
+
+
+
+
+    /////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////// PRIVATE METHODS
+    /////////////////////////////////////////////////////////////////////////////////////////
 
 
     // https://en.wikipedia.org/wiki/Primality_test#Pseudocode
