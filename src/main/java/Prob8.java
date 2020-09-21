@@ -1,15 +1,16 @@
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import util.Inputs;
 import util.Util;
 
 public class Prob8 {
 
+    static final String PROBLEM_NR = "8";
+
     static int[] get1000DigitNumber() throws Exception {
-        final String url = "https://projecteuler.net/problem=8";
-        Document doc = Jsoup.connect(url).get();
-        Element spaceSeparatedDigitLines = doc.getElementsByClass("monospace center").get(0);
-        String digitsStr = spaceSeparatedDigitLines.text().replace(" ", "");
+        String separatedDigitLines = Inputs.getProblemInput(PROBLEM_NR);
+        String digitsStr = separatedDigitLines.replace("\n", "");
         return Util.toIntArray(digitsStr);
     }
 
