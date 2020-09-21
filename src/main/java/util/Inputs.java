@@ -33,7 +33,7 @@ public class Inputs {
             Document doc = Jsoup.connect(URL).get();
             Element probContent = doc.getElementsByClass("problem_content").get(0);
             Element textElem = probContent.getElementsByClass("monospace center").get(0);
-            String text = textElem.text();
+            String text = textElem.wholeText();
 
             Writer writer = new BufferedWriter(new OutputStreamWriter(
                     new FileOutputStream(destPath), "utf-8"));
