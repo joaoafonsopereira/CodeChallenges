@@ -1,3 +1,5 @@
+package util.primes;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -8,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Util {
+public class Aux {
 
     private static final String PRIME_LIST_URL = "https://en.wikipedia.org/wiki/List_of_prime_numbers";
     private static final String PRIME_LIST_FILE = "list-of-primes";

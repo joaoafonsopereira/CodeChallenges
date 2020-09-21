@@ -1,5 +1,6 @@
+package util.primes;
+
 import org.junit.jupiter.api.Test;
-import util.primes.Primes;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -16,7 +17,7 @@ class PrimesTest {
 
     @Test
     void testIsPrimeNoPrevPrimes() {
-        List<Long> primesList = Util.getPrimesList();
+        List<Long> primesList = Aux.getPrimesList();
         for (Long p : primesList) {
             assert Primes.isPrime(p);
             if (p != 2)
@@ -26,7 +27,7 @@ class PrimesTest {
 
     @Test
     void testIsPrimeWithPrevPrimes() {
-        List<Long> primesList = Util.getPrimesList();
+        List<Long> primesList = Aux.getPrimesList();
         List<Long> prevPrimesList = new ArrayList<>();
         for (Long p : primesList) {
             assert Primes.isPrime(p, prevPrimesList);
@@ -38,7 +39,7 @@ class PrimesTest {
 
     @Test
     void testPrimesIterator() {
-        List<Long> primesList = Util.getPrimesList();
+        List<Long> primesList = Aux.getPrimesList();
         Iterator<Long> primesIt = Primes.newPrimesIterator();
 
         for (Long p : primesList) {
