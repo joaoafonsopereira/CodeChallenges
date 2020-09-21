@@ -14,7 +14,11 @@ import java.nio.file.Paths;
 
 public class Inputs {
 
-    static final String INPUT_FILES_DIR = "input-files/";
+    // hardcoded, but I couldn't find another way around the fact that System.getProperty("user.dir")
+    // returns different paths depending if it is a "normal" program (started with a main) or a JUnit test
+    static final String PROJECT_BASE_PATH = "/home/jpereira/CodeChallenges/projEuler/";
+
+    static final String INPUT_FILES_DIR = PROJECT_BASE_PATH + "input-files/";
     static final String INPUT_FILES_EXTENSION = ".in";
     static final String PROJ_EULER_BASE_PROBLEM_URL = "https://projecteuler.net/problem=";
 
