@@ -1,8 +1,5 @@
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 import util.Inputs;
-import util.Util;
+import util.Conversions;
 
 public class Prob8 {
 
@@ -11,7 +8,7 @@ public class Prob8 {
     static int[] get1000DigitNumber() throws Exception {
         String separatedDigitLines = Inputs.getProblemInput(PROBLEM_NR);
         String digitsStr = separatedDigitLines.replace("\n", "");
-        return Util.toIntArray(digitsStr);
+        return Conversions.toIntArray(digitsStr);
     }
 
     static long getProdBetween(int[] digits, int start, int end) {

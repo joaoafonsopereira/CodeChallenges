@@ -4,16 +4,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import static util.Maths.isMultiple;
+
 public class Primes {
-
-    public static boolean isMultiple(int x, int y) {
-        return (x % y) == 0;
-    }
-
-    // TODO: make isMultiple a generic method
-    public static boolean isMultiple(long x, long y) {
-        return (x % y) == 0;
-    }
 
     public static boolean isPrime(long n) {
         return isPrime(n, 5);

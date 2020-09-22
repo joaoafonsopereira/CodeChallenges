@@ -1,6 +1,7 @@
 package util.primes;
 
 import org.junit.jupiter.api.Test;
+import util.Maths;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -12,7 +13,7 @@ class PrimesTest {
 
     @Test
     void testIsMultiple() {
-        assert (Primes.isMultiple(69, 3));
+        assert (Maths.isMultiple(69, 3));
     }
 
     @Test

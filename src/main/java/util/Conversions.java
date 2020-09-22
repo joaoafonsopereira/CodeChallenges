@@ -1,6 +1,6 @@
 package util;
 
-public class Util {
+public class Conversions {
 
     public static int[] toIntArray(String spaceSeparatedArray) {
         final int len = spaceSeparatedArray.length();
@@ -32,13 +32,5 @@ public class Util {
         return res;
     }
 
-
-    public static int max(int... args) {
-        int max = Integer.MIN_VALUE;
-        for (int a : args) {
-            max = Math.max(a, max);
-        }
-        return max;
-    }
 
 }
