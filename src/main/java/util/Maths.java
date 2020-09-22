@@ -11,10 +11,19 @@ public class Maths {
         return (x % y) == 0;
     }
 
+    public static boolean isEven(long x) {
+        return isMultiple(x, 2);
+    }
+
+    public static boolean isPowerOf2(long x) {
+        return (x & (x-1)) == 0;
+    }
+
     public static boolean isPerfectSquare(long n) {
         double sqrt = Math.sqrt(n);
         return Math.floor(sqrt) - sqrt == 0.0f;
     }
+
 
     public static int max(int... args) {
         int max = Integer.MIN_VALUE;
@@ -23,7 +32,6 @@ public class Maths {
         }
         return max;
     }
-
 
 
 }
