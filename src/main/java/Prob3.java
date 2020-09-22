@@ -1,4 +1,4 @@
-import util.primes.PrimesIterator;
+import util.iterators.PrimesIterator;
 
 import static util.Maths.isMultiple;
 

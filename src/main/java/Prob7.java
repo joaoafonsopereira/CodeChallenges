@@ -1,4 +1,4 @@
-import util.primes.Primes;
+import util.Primes;
 
 public class Prob7 {
 

@@ -2,6 +2,7 @@ package util.primes;
 
 import org.junit.jupiter.api.Test;
 import util.Maths;
+import util.Primes;
 
 import java.util.ArrayList;
 import java.util.Iterator;

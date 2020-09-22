@@ -1,7 +1,7 @@
 
 import java.util.List;
 
-import static util.primes.Primes.sieveOfEratosthenes;
+import static util.Primes.sieveOfEratosthenes;
 
 public class Prob10 {
 
