@@ -1,4 +1,5 @@
 import util.*;
+import util.numbers.Generic;
 
 public class Prob11 {
 
@@ -86,7 +87,7 @@ public class Prob11 {
         int maxD1Prod = maxDiag1Product(grid);
         int maxD2Prod = maxDiag2Product(grid);
 
-        int max = Maths.max(maxHProd, maxVProd, maxD1Prod, maxD2Prod);
+        int max = Generic.max(maxHProd, maxVProd, maxD1Prod, maxD2Prod);
         System.out.println(max);
         System.out.println("----");
         System.out.println("H:  " + maxHProd);

@@ -1,11 +1,11 @@
-import util.Maths;
+import util.numbers.Generic;
 
 public class Prob14 {
 
     static final int LIMIT = 1000000;
 
     static long nextCollatz(long n) {
-        if(Maths.isEven(n))
+        if(Generic.isEven(n))
             return n/2;
         return 3*n + 1;
     }

@@ -1,8 +1,8 @@
 package util.primes;
 
 import org.junit.jupiter.api.Test;
-import util.Maths;
-import util.Primes;
+import util.numbers.Generic;
+import util.numbers.Primes;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -14,7 +14,7 @@ class PrimesTest {
 
     @Test
     void testIsMultiple() {
-        assert (Maths.isMultiple(69, 3));
+        assert (Generic.isMultiple(69, 3));
     }
 
     @Test

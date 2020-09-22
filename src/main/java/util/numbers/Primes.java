@@ -1,12 +1,12 @@
-package util;
+package util.numbers;
 
-import util.iterators.PrimesIterator;
+import util.numbers.iterators.PrimesIterator;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import static util.Maths.isMultiple;
+import static util.numbers.Generic.isMultiple;
 
 public class Primes {
 

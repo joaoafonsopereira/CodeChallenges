@@ -1,5 +1,5 @@
-import util.Maths;
-import util.iterators.TriangleNbrIterator;
+import util.numbers.Generic;
+import util.numbers.iterators.TriangleNbrIterator;
 
 import java.util.Iterator;
 
@@ -16,17 +16,17 @@ public class Prob12 {
     static int nDivisors(long nr) {
         int nDivs = 2; // 1 and nr
         for (int i = 2; i < Math.sqrt(nr); i++) {
-            if (Maths.isMultiple(nr, i))
+            if (Generic.isMultiple(nr, i))
                 nDivs += 2; // i and nr/i
         }
-        if (Maths.isPerfectSquare(nr))
+        if (Generic.isPerfectSquare(nr))
             nDivs++;
         return nDivs;
     }
 
 
     public static void main(String[] args) {
-        double start = System.currentTimeMillis();
+        double start = System.nanoTime();
 
         Iterator<Long> trianglesIt = new TriangleNbrIterator();
         while (true) {
@@ -37,7 +37,7 @@ public class Prob12 {
             }
         }
 
-        double time = (System.currentTimeMillis() - start) * 1.0 / 1000;
+        double time = (System.nanoTime() - start) * 1.0 / 1000000000;
         System.out.println("Time = " + time + "s");
     }
 

@@ -1,4 +1,4 @@
-package util.iterators;
+package util.numbers.iterators;
 
 import java.util.Iterator;
 

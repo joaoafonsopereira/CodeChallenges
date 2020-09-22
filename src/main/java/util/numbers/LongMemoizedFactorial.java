@@ -1,14 +1,14 @@
-package util;
+package util.numbers;
 
-import exceptions.OutOfRangeException;
+import util.exceptions.OutOfRangeException;
 
-public class MemoizedFactorial {
+public class LongMemoizedFactorial implements MemoizedFactorial<Long> {
 
     private final int capacity;
+    private final long[] factorials;
     private int lastComputedFactorial;
-    private long[] factorials;
 
-    public MemoizedFactorial(int maxFactorial) {
+    public LongMemoizedFactorial(int maxFactorial) {
         if (maxFactorial > 20)
             throw new OutOfRangeException("maxFactorial", 0, 20);
         this.capacity = maxFactorial + 1;
@@ -17,7 +17,7 @@ public class MemoizedFactorial {
         this.lastComputedFactorial = 0;
     }
 
-    public long factorial(int n) {
+    public Long factorial(int n) {
         if (n >= capacity)
             throw new OutOfRangeException("n", 0, capacity - 1);
 

@@ -1,17 +1,19 @@
 package util;
 
 import org.junit.jupiter.api.Test;
+import util.numbers.Combinatorics;
+import util.numbers.LongMemoizedFactorial;
+import util.numbers.MemoizedFactorial;
 
 import java.util.function.Consumer;
 
-class MemoizedFactorialTest {
+class LongMemoizedFactorialTest {
 
     @Test
     void testFactorial() {
         int maxFact = 20;
-        MemoizedFactorial mf = new MemoizedFactorial(maxFact);
+        MemoizedFactorial<Long> mf = new LongMemoizedFactorial(maxFact);
         for(int i = 0; i <= maxFact; i++)
-            //noinspection AssertWithSideEffects
             assert mf.factorial(i) == Combinatorics.factorial(i);
     }
 
@@ -25,6 +27,7 @@ class MemoizedFactorialTest {
 
 
 
+    @SuppressWarnings("ResultOfMethodCallIgnored")
     void fact0(int limit) {
         for(int i = 0; i <= limit; i++) {
             Combinatorics.factorial(i);
@@ -32,7 +35,7 @@ class MemoizedFactorialTest {
     }
 
     void fact1(int limit) {
-        MemoizedFactorial mf1 = new MemoizedFactorial(limit);
+        MemoizedFactorial<Long> mf1 = new LongMemoizedFactorial(limit);
         for(int i = 0; i <= limit; i++) {
             mf1.factorial(i);
         }
@@ -40,8 +43,9 @@ class MemoizedFactorialTest {
 
     // Using MemoizedFactorial but iterating backwards
     void fact2(int limit) {
-        MemoizedFactorial mf2 = new MemoizedFactorial(limit);
+        MemoizedFactorial<Long> mf2 = new LongMemoizedFactorial(limit);
         for(int i = limit; i >= 0; i--) {
+
             mf2.factorial(i);
         }
     }

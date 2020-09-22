@@ -1,4 +1,4 @@
-import static util.Maths.isMultiple;
+import static util.numbers.Generic.isMultiple;
 
 public class Prob5 {
 

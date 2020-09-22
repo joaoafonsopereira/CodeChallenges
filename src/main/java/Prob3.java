@@ -1,6 +1,6 @@
-import util.iterators.PrimesIterator;
+import util.numbers.iterators.PrimesIterator;
 
-import static util.Maths.isMultiple;
+import static util.numbers.Generic.isMultiple;
 
 public class Prob3 {
 

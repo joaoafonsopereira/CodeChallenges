@@ -1,6 +1,6 @@
-package util;
+package util.numbers;
 
-public class Maths {
+public class Generic {
 
     public static boolean isMultiple(int x, int y) {
         return (x % y) == 0;
