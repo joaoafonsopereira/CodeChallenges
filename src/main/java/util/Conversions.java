@@ -32,5 +32,19 @@ public class Conversions {
         return res;
     }
 
+    public static int[][] parseTriangle(String triangle) {
+        final String[] lines = triangle.split("\n");
+        final int nLines = lines.length;
+
+        int[][] res = new int[nLines][nLines];
+        for(int i = 0; i < nLines; i++) {
+            String line = lines[i];
+            String[] tokens = line.split(" ");
+            for(int j = 0; j <= i; j++) {
+                res[i][j] = Integer.parseInt(tokens[j]);
+            }
+        }
+        return res;
+    }
 
 }
