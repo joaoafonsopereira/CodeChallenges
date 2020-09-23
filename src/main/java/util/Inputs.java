@@ -28,11 +28,16 @@ public class Inputs {
         return Files.exists(path);
     }
 
+    // "Default parameter"
     static void downloadInputText(String URL, String destPath) {
+        downloadInputText(URL, destPath, 0);
+    }
+
+    static void downloadInputText(String URL, String destPath, int idxInMonospaceCenter) {
         try {
             Document doc = Jsoup.connect(URL).get();
             Element probContent = doc.getElementsByClass("problem_content").get(0);
-            Element textElem = probContent.getElementsByClass("monospace center").get(0);
+            Element textElem = probContent.getElementsByClass("monospace center").get(idxInMonospaceCenter);
             String text = textElem.wholeText();
 
             Writer writer = new BufferedWriter(new OutputStreamWriter(
@@ -57,11 +62,16 @@ public class Inputs {
         return res;
     }
 
+    // "Default parameter"
     public static String getProblemInput(String problemNr) {
+        return getProblemInput(problemNr, 0);
+    }
+
+    public static String getProblemInput(String problemNr, int idxInMonospaceCenter) {
         String URL = PROJ_EULER_BASE_PROBLEM_URL + problemNr;
         String filePath = INPUT_FILES_DIR + problemNr + INPUT_FILES_EXTENSION;
         if(!fileExists(filePath)) {
-            downloadInputText(URL, filePath);
+            downloadInputText(URL, filePath, idxInMonospaceCenter);
         }
         return readWholeFile(filePath);
     }
