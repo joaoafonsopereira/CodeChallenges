@@ -2,11 +2,11 @@ package util;
 
 public class Conversions {
 
-    public static int[] toIntArray(String spaceSeparatedArray) {
-        final int len = spaceSeparatedArray.length();
+    public static int[] toIntArray(String arrayAsString) {
+        final int len = arrayAsString.length();
         int[] res = new int[len];
         for (int i = 0; i < len; i++) {
-            res[i] = spaceSeparatedArray.charAt(i) - '0';
+            res[i] = arrayAsString.charAt(i) - '0';
         }
         return res;
     }
