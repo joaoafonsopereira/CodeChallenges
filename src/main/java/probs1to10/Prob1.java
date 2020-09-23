@@ -1,3 +1,5 @@
+package probs1to10;
+
 public class Prob1 {
 
     static boolean isMultiple(int x, int y) {

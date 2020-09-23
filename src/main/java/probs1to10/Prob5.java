@@ -1,3 +1,5 @@
+package probs1to10;
+
 import static util.numbers.Generic.isMultiple;
 
 public class Prob5 {

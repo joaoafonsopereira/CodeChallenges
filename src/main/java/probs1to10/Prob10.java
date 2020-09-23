@@ -1,3 +1,4 @@
+package probs1to10;
 
 import java.util.List;
 

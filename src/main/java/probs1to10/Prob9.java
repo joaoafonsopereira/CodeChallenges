@@ -1,3 +1,5 @@
+package probs1to10;
+
 /**
  * Problem 9 - Special Pythagorean triplet //
  *

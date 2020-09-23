@@ -1,3 +1,5 @@
+package probs1to10;
+
 import util.numbers.Primes;
 
 public class Prob7 {

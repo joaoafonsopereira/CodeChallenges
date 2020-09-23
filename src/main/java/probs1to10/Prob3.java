@@ -1,3 +1,5 @@
+package probs1to10;
+
 import util.numbers.iterators.PrimesIterator;
 
 import static util.numbers.Generic.isMultiple;

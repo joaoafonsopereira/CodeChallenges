@@ -1,3 +1,5 @@
+package probs1to10;
+
 public class Prob4 {
 
     static boolean isPalindrome(int n) {
