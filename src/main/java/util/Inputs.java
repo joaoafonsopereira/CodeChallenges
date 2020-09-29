@@ -4,10 +4,8 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
-import java.io.BufferedWriter;
-import java.io.FileOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -28,6 +26,14 @@ public class Inputs {
         return Files.exists(path);
     }
 
+    public static String problemInputPath(String problemNr) {
+        return INPUT_FILES_DIR + problemNr + INPUT_FILES_EXTENSION;
+    }
+
+    public static String problemInputURL(String problemNr) {
+        return PROJ_EULER_BASE_PROBLEM_URL + problemNr;
+    }
+
     // "Default parameter"
     static void downloadInputText(String URL, String destPath) {
         downloadInputText(URL, destPath, 0);
@@ -41,7 +47,7 @@ public class Inputs {
             String text = textElem.wholeText();
 
             Writer writer = new BufferedWriter(new OutputStreamWriter(
-                    new FileOutputStream(destPath), "utf-8"));
+                    new FileOutputStream(destPath), StandardCharsets.UTF_8));
             writer.write(text);
             writer.close();
 
@@ -68,9 +74,9 @@ public class Inputs {
     }
 
     public static String getProblemInput(String problemNr, int idxInMonospaceCenter) {
-        String URL = PROJ_EULER_BASE_PROBLEM_URL + problemNr;
-        String filePath = INPUT_FILES_DIR + problemNr + INPUT_FILES_EXTENSION;
-        if(!fileExists(filePath)) {
+        String URL = problemInputURL(problemNr);
+        String filePath = problemInputPath(problemNr);
+        if (!fileExists(filePath)) {
             downloadInputText(URL, filePath, idxInMonospaceCenter);
         }
         return readWholeFile(filePath);
